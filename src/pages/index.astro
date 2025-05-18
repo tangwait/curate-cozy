@@ -1,16 +1,37 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ProductCarousel from "../components/ProductCarousel.astro";
 
+const homeDecor = [
+  {
+    name: "Boho Wall Hanging",
+    image: "https://via.placeholder.com/200x200?text=Boho+Wall",
+    link: "https://www.amazon.com/your-affiliate-link1"
+  },
+  {
+    name: "Cozy Throw Blanket",
+    image: "https://via.placeholder.com/200x200?text=Throw+Blanket",
+    link: "https://www.amazon.com/your-affiliate-link2"
+  },
+  // Add up to 10
+];
+
+const homeScents = [
+  {
+    name: "Scented Soy Candle",
+    image: "https://via.placeholder.com/200x200?text=Candle",
+    link: "https://www.amazon.com/your-affiliate-link3"
+  },
+  {
+    name: "Essential Oil Diffuser",
+    image: "https://via.placeholder.com/200x200?text=Diffuser",
+    link: "https://www.amazon.com/your-affiliate-link4"
+  },
+  // Add more products
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <ProductCarousel title="Home Decor" products={homeDecor} id="decor" />
+  <ProductCarousel title="Home Scents" products={homeScents} id="scents" />
+</BaseLayout>

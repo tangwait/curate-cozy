@@ -1,0 +1,20 @@
+---
+const { title, products, id } = Astro.props;
+---
+
+<section class="section" id={id}>
+  <h2>{title}</h2>
+  <div class="scroll-buttons">
+    <button onclick={`document.getElementById('${id}-carousel').scrollBy({left: -220, behavior: 'smooth'})`}>←</button>
+    <button onclick={`document.getElementById('${id}-carousel').scrollBy({left: 220, behavior: 'smooth'})`}>→</button>
+  </div>
+  <div class="carousel-container" id={`${id}-carousel`}>
+    {products.map((p) => (
+      <div class="product-card">
+        <img src={p.image} alt={p.name} />
+        <p>{p.name}</p>
+        <a href={p.link} target="_blank">View</a>
+      </div>
+    ))}
+  </div>
+</section>
